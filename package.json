@@ -44,6 +44,7 @@
     "binary-extensions": "^2.2.0",
     "body-parser": "^1.20.1",
     "bonjour-service": "^1.2.1",
+    "bootstrap": "^5.3.2",
     "brace-expansion": "^1.1.11",
     "braces": "^3.0.2",
     "browserslist": "^4.22.3",

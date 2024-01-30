@@ -10,7 +10,7 @@ import xboxLogo from "./logos/xbox.svg";
 
 function PageList() {
   const [games, setGames] = useState([]);
-  const API_KEY = "397ef01138b4459d8c87af398f1a6506"; 
+  const API_KEY = "397ef01138b4459d8c87af398f1a6506"; // Remplacez avec votre clé API réelle
 
   useEffect(() => {
     // Effectuez ici votre appel API pour récupérer la liste de jeux
@@ -75,13 +75,66 @@ function PageList() {
       case "switch":
         return switchLogo;
       default:
-        return null; // Logo par défaut si le slug n'est pas trouvé
+        return null; 
     }
   }
 
   return (
     <div className="page-list">
-      {/* Affichez ici la liste de jeux en utilisant la variable 'games' */}
+      return (
+      <div className="page-list">
+        {games.map((game, index) => (
+          <div key={index} className="game-card">
+            <img src={game.image} alt={game.name} />
+            <h2>{game.name}</h2>
+            <p>{game.description}</p>
+            <p>Date de sortie : {game.releaseDate}</p>
+            <p>Éditeur : {game.publisher}</p>
+            <p>Plateformes :</p>
+            <ul>
+              {game.platforms.map((platform, platformIndex) => (
+                <li key={platformIndex}>
+                  <img src={platform.logo} alt={platform.name} />
+                  <a href={platform.link}>{platform.name}</a>
+                </li>
+              ))}
+            </ul>
+            <p>Genres :</p>
+            <ul>
+              {game.genres.map((genre, genreIndex) => (
+                <li key={genreIndex}>
+                  <a href={genre.link}>{genre.name}</a>
+                </li>
+              ))}
+            </ul>
+            <p>
+              Site Web : <a href={game.website}>{game.website}</a>
+            </p>
+            {game.video && <video controls src={game.video}></video>}
+            <p>Moyenne des notes : {game.averageRating}</p>
+            <p>Nombre de notes : {game.numberOfRatings}</p>
+            <p>Aperçus :</p>
+            <div className="screenshots">
+              {game.screenshots.map((screenshot, screenshotIndex) => (
+                <img
+                  key={screenshotIndex}
+                  src={screenshot.image}
+                  alt={`Screenshot ${screenshotIndex + 1}`}
+                />
+              ))}
+            </div>
+            <p>Liens d'achat :</p>
+            <ul>
+              {game.buyLinks.map((buyLink, linkIndex) => (
+                <li key={linkIndex}>
+                  <a href={buyLink.link}>{buyLink.name}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+      );
     </div>
   );
 }
