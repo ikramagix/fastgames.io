@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="18px" viewBox="0 0 20 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>ant-design:windows-filled</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-GameList" transform="translate(-370.000000, -1332.000000)" fill-rule="nonzero">
+            <g id="Cards" transform="translate(50.000000, 458.000000)">
+                <g id="Dota-Underlords" transform="translate(318.000000, 627.000000)">
+                    <g id="Platforms" transform="translate(0.000000, 244.000000)">
+                        <g id="ant-design:windows-filled">
+                            <g id="Icon" fill="#FFFFFF">
+                                <path d="M12.2765625,4.4859375 L12.2765625,11.2570313 L21.2296875,11.2570313 L21.2296875,3.00234375 L12.2765625,4.4859375 Z M12.2765625,19.5375 L21.2296875,20.9953125 L21.2296875,12.7453125 L12.2765625,12.7453125 L12.2765625,19.5375 Z M2.81484375,11.2546875 L10.3828125,11.2546875 L10.3828125,4.73203125 L2.81484375,5.9859375 L2.81484375,11.2546875 Z M2.81484375,18.0609375 L10.3828125,19.29375 L10.3828125,12.7453125 L2.81484375,12.7453125 L2.81484375,18.0609375 Z" id="Icon-Shape"></path>
+                            </g>
+                            <rect id="ViewBox" x="0" y="0" width="24" height="24"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

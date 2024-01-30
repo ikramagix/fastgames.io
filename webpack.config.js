@@ -7,12 +7,13 @@ module.exports = {
   mode: 'development',
   
   // Point d'entrée de votre application
-  entry: './src/index.js',
+  entry: './src/app.js',
   
   // Sortie des bundles
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    clean: true, // Nettoie le dossier dist avant de reconstruire
   },
   
   // Règles pour les modules
@@ -38,6 +39,16 @@ module.exports = {
           'sass-loader'   // compile Sass en CSS
         ],
       },
+      {
+        // Chargement des images
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
+      {
+        // Chargement des polices de caractères et autres fichiers statiques
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+      },
     ],
   },
   
@@ -59,5 +70,6 @@ module.exports = {
     static: './dist',
     open: true,
     hot: true,
+    port: 3000, 
   },
 };
