@@ -1,0 +1,9 @@
+footer {
+    background-color: $secondary-color;
+    padding: 1em;
+    color: white;
+  
+    // Utilisation d'un mixin pour le texte
+    @include responsive-font-size($font-size-normal);
+  }
+  
