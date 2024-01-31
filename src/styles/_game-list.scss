@@ -1,0 +1,9 @@
+.game-list {
+    @include grid-layout(3, $grid-gap); // Assuming you want 3 columns with a gap
+    padding: 20px; // Add padding around the entire grid
+  
+    @media (max-width: $breakpoint-mobile) {
+      @include grid-layout(1, $grid-gap); // Stack the cards on top of each other on mobile
+    }
+  }
+  

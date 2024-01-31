@@ -2,9 +2,12 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+// Determine if we are in development mode based on the NODE_ENV variable
+const isDevelopment = process.env.NODE_ENV !== 'production';
+
 module.exports = {
-  // Mode de développement pour un meilleur débogage
-  mode: 'development',
+  // Mode is determined by the environment variable
+  mode: isDevelopment ? 'development' : 'production',
   
   // Point d'entrée de votre application
   entry: './src/app.js',
@@ -34,7 +37,8 @@ module.exports = {
         // Traitement des fichiers SCSS
         test: /\.scss$/,
         use: [
-          MiniCssExtractPlugin.loader, // extrait le CSS dans des fichiers séparés
+          // Utiliser style-loader en développement et MiniCssExtractPlugin en production
+          isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
           'css-loader',   // traduit le CSS en CommonJS
           'sass-loader'   // compile Sass en CSS
         ],
@@ -58,11 +62,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html'
     }),
-    
-    // Plugin pour extraire le CSS dans des fichiers séparés
-    new MiniCssExtractPlugin({
+    // Conditionally add this plugin for production only
+    ...(!isDevelopment ? [new MiniCssExtractPlugin({
       filename: 'styles.css',
-    }),
+    })] : []),
   ],
 
   // Configuration du serveur de développement
@@ -70,6 +73,7 @@ module.exports = {
     static: './dist',
     open: true,
     hot: true,
-    port: 3000, 
+    port: 3000,
+    historyApiFallback: true, // Add this for SPA routing
   },
 };

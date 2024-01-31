@@ -1,0 +1,49 @@
+.game-card {
+    background: $color-secondary; // White background for the card
+    border-radius: $border-radius; // Rounded corners
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Subtle shadow
+    overflow: hidden; // Ensures nothing spills out of the card
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; // Space out the card content evenly
+    transition: transform 0.2s; // Smooth transition for hover effect
+  
+    &:hover {
+      transform: translateY(-5px); // Slight lift on hover
+    }
+  
+    .game-image {
+      width: 100%;
+      height: auto; // Maintain aspect ratio
+      display: block;
+    }
+  
+    .game-info {
+      padding: 15px; // Padding inside the card for text
+  
+      .game-title {
+        font-size: 1.1rem;
+        color: $color-primary; // Black color for the title
+        margin-bottom: 5px; // Space between the title and the rest
+      }
+  
+      .game-platforms {
+        // Placeholder for platform icon styles
+      }
+  
+      .game-rating {
+        // Placeholder for rating styles
+        // Example:
+        color: $color-accent;
+        font-weight: bold;
+      }
+    }
+  
+    .game-details-button {
+      @include button-style; // Use the button mixin for styling
+      text-align: center;
+      padding: 10px;
+      margin-top: 10px; // Space from the content above
+    }
+  }
+  

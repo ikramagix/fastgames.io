@@ -1,0 +1,16 @@
+header {
+    background-color: $color-secondary;
+    padding: 20px;
+    position: relative; // Assuming you might need to position elements absolutely within
+  
+    .search-bar {
+      // Placeholder for search bar styles
+      @include flex-center;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
+    
+    // Add more styles for your logo and navigation items here
+  }
+  

@@ -1,0 +1,14 @@
+// Import base styles
+@import 'variables';
+@import 'mixins';
+@import 'reset';
+
+// Import component styles
+@import 'header';
+@import 'footer';
+@import 'game-list'; // For the container that holds all game cards
+@import 'game-card'; // For individual game cards
+@import 'button';    // If you have a separate SCSS file for buttons
+
+// Import responsive styles
+@import 'responsive';
